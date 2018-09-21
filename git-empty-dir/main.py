@@ -26,7 +26,7 @@ def check_git_dir(dir):
         print 'Not found .git in ' + dir
         sys.exit(1)
 
-def main():
+def com():
     parser = argparse.ArgumentParser(description='Add .gitkeep to empty directories.')
 
     subparsers = parser.add_subparsers(title='commands', metavar='command')
@@ -47,5 +47,5 @@ def main():
 
     args.func(args)
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()
