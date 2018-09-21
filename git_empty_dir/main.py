@@ -3,19 +3,19 @@
 
 import os
 import argparse
+import commands
 import sys
-import subprocess
 
 def list(args):
     command = "find %(dir)s -type d -name .git -prune -o -type d -empty" % vars(args)
-    result = subprocess.check_call(command,shell=True)
+    result = commands.getstatusoutput(command)
     print result[1]
     if result[0] > 0:
         sys.exit(1)
 
 def keep(args):
     command = "find %(dir)s -type d -name .git -prune -o -type d -empty -exec touch {}/%(keeper)s \;" % vars(args)
-    result = subprocess.check_call(command,shell=True)
+    result = commands.getstatusoutput(command)
     print result[1]
     if result[0] > 0:
         sys.exit(1)
