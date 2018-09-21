@@ -7,7 +7,7 @@ setup(
     #install_requires=['cliff'],  
     entry_points={  
         'console_scripts':  
-            'git-empty-dir = git-empty-init.main:com'  
+            'git-empty-dir = git_empty_dir.main:com'  
     },  
     zip_safe=False,  
     classifiers=[  
